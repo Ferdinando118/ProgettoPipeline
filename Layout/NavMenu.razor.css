@@ -1,43 +1,47 @@
-/* Navbar traslucida con ombra */
+/* 🔝 Barra superiore traslucida */
 .top-row {
     height: 3.5rem;
     background-color: rgba(0, 0, 0, 0.65);
     backdrop-filter: blur(6px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
 }
 
-/* Tasto menu mobile */
+/* 📱 Tasto menu mobile */
 .navbar-toggler {
     background-color: rgba(255, 255, 255, 0.2);
     border: none;
-    transition: all 0.3s ease;
+    padding: 0.4rem 0.6rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
 }
-
 .navbar-toggler:hover {
     background-color: rgba(255, 255, 255, 0.35);
 }
 
+/* 🏷️ Brand */
 .navbar-brand {
     font-size: 1.3rem;
     font-weight: 600;
     color: #fff;
 }
 
-/* Icone menu */
+/* 🎯 Icone menu */
 .bi {
     width: 1.6rem;
     height: 1.6rem;
     margin-right: 0.8rem;
-    top: 0;
 }
 
-/* Nav item */
+/* 📋 Voci di menu */
 .nav-item {
     font-size: 1rem;
     padding: 0.6rem 0;
     transition: transform 0.2s ease, background 0.3s ease;
 }
-
 .nav-item:first-of-type { padding-top: 1.2rem; }
 .nav-item:last-of-type { padding-bottom: 1.2rem; }
 
@@ -50,25 +54,23 @@
     padding: 0 0.8rem;
     transition: all 0.3s ease;
 }
-
 .nav-item ::deep a.active {
     background-color: rgba(255, 255, 255, 0.4);
     color: #fff;
 }
-
 .nav-item ::deep a:hover {
     background-color: rgba(255, 255, 255, 0.2);
     color: #fff;
     transform: translateX(5px);
 }
 
-/* Sidebar scrollabile */
+/* 📜 Sidebar scrollabile */
 .nav-scrollable {
     height: calc(100vh - 3.5rem);
     overflow-y: auto;
 }
 
-/* Responsive */
+/* 📱 Responsive */
 @media (min-width: 641px) {
     .navbar-toggler { display: none; }
     .collapse { display: block; }

@@ -1,17 +1,20 @@
-/* Font e sfondo */
+/* 🌐 Base: Font e sfondo */
 html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     background-color: #f4f7f9;
     color: #333;
+    margin: 0;
+    padding: 0;
 }
 
-/* Link e bottoni */
+/* 🔗 Link e bottoni */
 a, .btn-link {
     color: #1b6ec2;
     transition: color 0.3s ease;
 }
-
-a:hover, .btn-link:hover { color: #145a99; }
+a:hover, .btn-link:hover {
+    color: #145a99;
+}
 
 .btn-primary {
     background-color: #1b6ec2;
@@ -19,23 +22,34 @@ a:hover, .btn-link:hover { color: #145a99; }
     border-radius: 6px;
     color: #fff;
     padding: 0.5rem 1rem;
-    transition: all 0.3s ease;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.btn-primary:hover {
+    background-color: #145a99;
 }
 
-.btn-primary:hover { background-color: #145a99; }
+/* 📦 Contenuto principale */
+.content {
+    padding-top: 1.2rem;
+}
 
-/* Contenuti */
-.content { padding-top: 1.2rem; }
+/* ✅ Validazione input */
+.valid.modified:not([type=checkbox]) {
+    outline: 1px solid #26b050;
+}
+.invalid {
+    outline: 1px solid #e74c3c;
+}
+.validation-message {
+    color: #e74c3c;
+    font-size: 0.9rem;
+}
 
-/* Validazione */
-.valid.modified:not([type=checkbox]) { outline: 1px solid #26b050; }
-.invalid { outline: 1px solid #e74c3c; }
-.validation-message { color: #e74c3c; }
-
-/* Errori Blazor moderni */
+/* ⚠️ Blazor error UI */
 #blazor-error-ui {
     background: #fff4e5;
-    box-shadow: 0 -2px 6px rgba(0,0,0,0.15);
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.15);
     padding: 0.8rem 1.5rem;
     position: fixed;
     bottom: 0;
@@ -44,7 +58,6 @@ a:hover, .btn-link:hover { color: #145a99; }
     color: #7a4f01;
     z-index: 1000;
 }
-
 #blazor-error-ui .dismiss {
     cursor: pointer;
     position: absolute;
@@ -53,14 +66,13 @@ a:hover, .btn-link:hover { color: #145a99; }
     font-weight: bold;
 }
 
-/* Loading */
+/* ⏳ Loading spinner */
 .loading-progress {
     display: block;
     width: 8rem;
     height: 8rem;
     margin: 20vh auto 1rem auto;
 }
-
 .loading-progress circle {
     fill: none;
     stroke: #e0e0e0;
@@ -68,13 +80,11 @@ a:hover, .btn-link:hover { color: #145a99; }
     transform-origin: 50% 50%;
     transform: rotate(-90deg);
 }
-
 .loading-progress circle:last-child {
     stroke: #1b6ec2;
     stroke-dasharray: calc(3.141 * var(--blazor-load-percentage, 0%) * 0.8), 500%;
     transition: stroke-dasharray 0.1s ease-in-out;
 }
-
 .loading-progress-text {
     text-align: center;
     font-weight: bold;
@@ -83,7 +93,7 @@ a:hover, .btn-link:hover { color: #145a99; }
     margin-top: 0.5rem;
 }
 
-/* Code */
+/* 🧠 Codice inline */
 code {
     color: #c02d76;
     background: #eef0f3;
