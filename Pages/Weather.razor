@@ -9,29 +9,27 @@
 }
 else
 {
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Data</th>
-                <th>Temperatura (°C)</th>
-                <th>Condizioni</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var f in forecasts)
-            {
-                <tr>
-                    <td>@f.Date.ToShortDateString()</td>
-                    <td>@f.TemperatureC</td>
-                    <td>@f.Summary</td>
-                </tr>
-            }
-        </tbody>
-    </table>
+    <ul>
+        @foreach (var f in forecasts)
+        {
+            <li>
+                <b>@f.Date.ToShortDateString()</b> - 
+                @f.TemperatureC °C - 
+                @f.Summary
+            </li>
+        }
+    </ul>
 }
 
+@code {
+    WeatherForecast[]? forecasts;
 
-    public class WeatherForecast
+    protected override async Task OnInitializedAsync()
+    {
+        forecasts = await Http.GetFromJsonAsync<WeatherForecast[]>("sample-data/weather.json");
+    }
+
+    class WeatherForecast
     {
         public DateTime Date { get; set; }
         public int TemperatureC { get; set; }
