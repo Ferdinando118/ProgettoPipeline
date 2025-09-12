@@ -1,64 +1,165 @@
-/* 🌐 Base */
-html, body {
-    font-family: 'Inter', sans-serif;
-    background-color: #fdfdfd;
-    color: #2d2d2d;
+/* App.css - Stili globali dell'applicazione */
+:root {
+    --primary-color: #4361ee;
+    --secondary-color: #3a0ca3;
+    --accent-color: #f72585;
+    --light-color: #f8f9fa;
+    --dark-color: #212529;
+    --success-color: #4cc9f0;
+    --warning-color: #f9c74f;
+    --danger-color: #f94144;
+    --gray-light: #e9ecef;
+    --border-radius: 12px;
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-/* 🔗 Link */
-a {
-    color: #4f46e5;
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: var(--dark-color);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+.page {
+    display: flex;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    flex: 1;
+    padding: 2rem;
+}
+
+.top-row {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.75rem 1rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.top-row a {
+    color: white;
     text-decoration: none;
-    transition: color 0.3s ease;
-}
-a:hover {
-    color: #4338ca;
+    transition: var(--transition);
 }
 
-/* 🎯 Bottoni */
-.btn-primary {
-    background-color: #10b981;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    padding: 0.6rem 1.2rem;
+.top-row a:hover {
+    color: var(--light-color);
+    text-decoration: underline;
+}
+
+article {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+h1 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--gray-light);
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--gray-light);
+    border-radius: var(--border-radius);
     font-size: 1rem;
+    transition: var(--transition);
+    margin-bottom: 1rem;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+}
+
+.btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: var(--transition);
+    display: inline-block;
+    text-align: center;
 }
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
 .btn-primary:hover {
-    background-color: #059669;
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
 }
 
-/* ✅ Validazione */
-.valid.modified:not([type=checkbox]) {
-    border: 1px solid #10b981;
-}
-.invalid {
-    border: 1px solid #ef4444;
-}
-.validation-message {
-    color: #ef4444;
-    font-size: 0.9rem;
+.btn-success {
+    background-color: var(--success-color);
+    color: white;
 }
 
-/* ⏳ Loading */
-.loading-progress {
-    width: 6rem;
-    height: 6rem;
-    margin: 20vh auto;
-}
-.loading-progress circle:last-child {
-    stroke: #4f46e5;
+.btn-success:hover {
+    background-color: #3aa5d3;
+    transform: translateY(-2px);
 }
 
-/* 🧠 Codice */
-code {
-    background-color: #f3f4f6;
-    color: #4f46e5;
-    padding: 2px 6px;
-    border-radius: 6px;
-    font-family: 'Courier New', monospace;
+ul {
+    list-style-type: none;
+    margin-top: 1.5rem;
+}
+
+li {
+    background-color: var(--light-color);
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+    border-radius: var(--border-radius);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+}
+
+li:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+b {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .content {
+        padding: 1rem;
+    }
+    
+    article {
+        padding: 1.5rem;
+    }
 }
