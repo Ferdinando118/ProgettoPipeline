@@ -1,0 +1,16 @@
+﻿@page "/random"
+
+<h1>🎲 Numero casuale</h1>
+
+<p>Numero generato: <b>@number</b></p>
+<button class="btn btn-success" @onclick="Genera">Genera nuovo</button>
+
+@code {
+    int number = 0;
+    Random rng = new Random();
+
+    void Genera()
+    {
+        number = rng.Next(1, 101); // tra 1 e 100
+    }
+}

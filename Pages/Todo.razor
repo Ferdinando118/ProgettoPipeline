@@ -1,0 +1,28 @@
+@page "/todo"
+
+<h1>✅ Lista To-do</h1>
+
+<input @bind="newItem" placeholder="Aggiungi un compito..." class="form-control" />
+<button class="btn btn-primary mt-2" @onclick="AddItem">Aggiungi</button>
+
+<ul>
+    @foreach (var item in items)
+    {
+        <li>@item</li>
+    }
+</ul>
+
+@code {
+    string? newItem;
+    List<string> items = new();
+
+    void AddItem()
+    {
+        if (!string.IsNullOrWhiteSpace(newItem))
+        {
+            items.Add(newItem);
+            newItem = string.Empty;
+        }
+    }
+}
+
